@@ -139,7 +139,8 @@ server {
   ssl_certificate_key /etc/ssl/certs/pay1ssl25.key;
 
   client_max_body_size 40M;
-
+  
+  # Only serve for your domain (prevent IP access)
   if ($host != "glitchtip.example.in") {
     return 404;
   }
